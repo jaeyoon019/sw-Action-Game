@@ -1,8 +1,34 @@
-# Mermaid 예시
-
-```mermaid
-graph TD
-    A[시작] --> B{조건 확인}
-    B -->|Yes| C[작업 수행]
-    B -->|No| D[종료]
-    C --> D
+SlashGame
+│
+├── Player
+│   ├── PlayerController.cs
+│   ├── PlayerAttack.cs
+│   ├── PlayerSkill.cs
+│   └── Inventory.cs
+│
+├── Enemy
+│   ├── EnemyController.cs
+│   ├── EnemySpawner.cs
+│   └── BossEnemy.cs
+│
+├── Item
+│   ├── ItemData.cs
+│   ├── ItemDrop.cs
+│   └── EquipmentSystem.cs
+│
+├── Shop
+│   ├── ShopManager.cs
+│   └── CoinSystem.cs
+│
+├── UI
+│   ├── LoginUI.cs
+│   ├── InventoryUI.cs
+│   ├── GameUI.cs
+│   └── ShopUI.cs
+│
+├── Manager
+│   ├── GameManager.cs
+│   ├── SaveManager.cs
+│   └── SoundManager.cs
+│
+└── README.md
