@@ -2,8 +2,10 @@
 flowchart LR
 
 %% Actor
+
 Player[플레이어]
 Admin[관리자]
+
 
 
 %% Player Main
@@ -11,12 +13,6 @@ Player --> InformationManage((정보 관리))
 Player --> GamePlay((게임 플레이))
 Player --> ItemManage((아이템 관리))
 Player --> ShopSystem((상점 시스템))
-
-%% Member Manage
-InformationManage --> Login((로그인))
-InformationManage --> Logout((로그아웃))
-InformationManage --> EditProfile((회원 정보 수정))
-InformationManage --> Withdraw((회원 탈퇴))
 
 %% Game Play
 GamePlay --> StartGame((게임 시작))
@@ -26,6 +22,7 @@ GamePlay --> Skill((스킬 사용))
 GamePlay --> KillMonster((몬스터 처치))
 GamePlay --> LevelUp((레벨업))
 GamePlay --> EndGame((게임 종료))
+GamePlay --> StagePassiveSave((게임 수동 저장))
 
 %% Item Manage
 ItemManage --> GetItem((아이템 획득))
@@ -37,19 +34,15 @@ ItemManage --> SellItem((아이템 판매))
 %% Shop
 ShopSystem --> ViewShop((상점 조회))
 ShopSystem --> BuyItem((아이템 구매))
-ShopSystem --> UseCoin((코인 사용))
-ShopSystem --> ChargeCoin((코인 충전))
 
 %% Admin
 Admin --> AdminSystem((관리자 시스템))
-
-AdminSystem --> UserCheck((회원 조회))
 AdminSystem --> ItemRegister((아이템 등록))
 AdminSystem --> ItemEdit((아이템 수정))
 AdminSystem --> ItemDelete((아이템 삭제))
 AdminSystem --> MonsterRegister((몬스터 등록))
 AdminSystem --> MonsterEdit((몬스터 수정))
-AdminSystem --> Notice((공지사항 작성))
+AdminSystem --> StageAutoSave((게임 자동 저장))
 ```
 
 *최종 수정: 2026-05-18 | 담당: 김남준(분석가)*
