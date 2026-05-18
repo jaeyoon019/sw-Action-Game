@@ -2,12 +2,9 @@
 flowchart LR
 
 %% Actor
-Guest[미등록 사용자]
 Player[플레이어]
 Admin[관리자]
 
-%% Guest
-Guest --> Signup((회원가입))
 
 %% Player Main
 Player --> InformationManage((정보 관리))
