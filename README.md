@@ -33,5 +33,5 @@
 - [비용산정](docs/FP_estimation.md)
 - [유스 케이스](docs/usecase.md)
 - [클래스 다이어그램](docs/classdiagram.md)
-- [AI 사용 로그](docs/ai-usage-records/)
+- [AI 사용 로그](docs/ai-usage-record/)
 - [회의록 목록](docs/meetings/)
