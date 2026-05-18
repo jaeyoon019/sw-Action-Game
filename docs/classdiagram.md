@@ -1,4 +1,4 @@
-<img width="1472" height="11520" alt="image" src="https://github.com/user-attachments/assets/18bf057c-f629-4187-9a7f-38062c0b6522" />```mermaid
+```mermaid
 classDiagram
 
 %% ────────────────────────────────────────────────
