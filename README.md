@@ -31,4 +31,6 @@
 - [요구사항 정의서](docs/requirements.md)
 - [WBS 및 일정](docs/wbs.md)
 - [비용산정](docs/FP_estimation.md)
+- [유스 케이스](docs/usecase.md)
+- [클래스 다이어그램](docs/classdiagram.md)
 - [회의록 목록](docs/meetings/)
