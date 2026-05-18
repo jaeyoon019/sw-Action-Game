@@ -54,3 +54,5 @@ AdminSystem --> MonsterRegister((몬스터 등록))
 AdminSystem --> MonsterEdit((몬스터 수정))
 AdminSystem --> Notice((공지사항 작성))
 ```
+
+*최종 수정: 2026-05-18 | 담당: 김남준(분석가)*
