@@ -10,16 +10,16 @@ Admin[관리자]
 Guest --> Signup((회원가입))
 
 %% Player Main
-Player --> MemberManage((회원 관리))
+Player --> InformationManage((정보 관리))
 Player --> GamePlay((게임 플레이))
 Player --> ItemManage((아이템 관리))
 Player --> ShopSystem((상점 시스템))
 
 %% Member Manage
-MemberManage --> Login((로그인))
-MemberManage --> Logout((로그아웃))
-MemberManage --> EditProfile((회원 정보 수정))
-MemberManage --> Withdraw((회원 탈퇴))
+InformationManage --> Login((로그인))
+InformationManage --> Logout((로그아웃))
+InformationManage --> EditProfile((회원 정보 수정))
+InformationManage --> Withdraw((회원 탈퇴))
 
 %% Game Play
 GamePlay --> StartGame((게임 시작))
