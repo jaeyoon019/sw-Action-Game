@@ -19,7 +19,6 @@ class Admin {
   +String role
   +manageItems()
   +manageMonsters()
-  +autoSaveStage()
 }
 
 %% ────────────────────────────────────────────────
@@ -72,7 +71,7 @@ class Skill {
   +int mpCost
   +float cooldown
   +float damage
-  +activate(caster, target)
+  +activate(String casterId, String targetId)
   +checkCooldown() bool
 }
 
@@ -132,7 +131,6 @@ class Monster {
 }
 
 class Boss {
-  +String bossId
   +List~Skill~ skills
   +int phase
   +phaseTransition()
@@ -173,7 +171,6 @@ class Inventory {
   +addItem(item) bool
   +removeItem(item)
   +equipItem(equipment)
-  +sellItem(item)
   +listItems() List~Item~
 }
 
@@ -200,7 +197,7 @@ class Score {
   +float clearTime
   +boolean noDamage
   +DateTime createdAt
-  +calculate() int
+  +calculate(float clearTime, boolean noDamage) int
 }
 
 class Ranking {
@@ -219,7 +216,7 @@ class GameSession {
   +String playerId
   +String stageId
   +float elapsedTime
-  +int currentCheckpointId
+  +String currentCheckpointId
   +GameState state
   +start()
   +pause()
@@ -250,16 +247,17 @@ class Challenge {
   +String type
   +String description
   +boolean completed
+  +String rewardDescription
   +checkCondition(session) bool
   +complete()
-  +getReward() Item
+  +getReward() String
 }
 
 %% ────────────────────────────────────────────────
 %%  관계 정의
 %% ────────────────────────────────────────────────
 User "1" --> "1" Player : 조작
-User "1" --> "0..1" Admin : 역할 상속
+User <|-- Admin : 상속
 
 Player "1" *-- "1" PlayerStats : 보유
 Player "1" *-- "1" Inventory : 보유
@@ -291,9 +289,10 @@ Score "0..*" --> "1" Stage : 귀속
 Ranking "1" o-- "0..*" Score : 집계
 
 Challenge "0..*" --> "1" GameSession : 추적
+Challenge "0..*" --> "1" Stage : 귀속
 Admin --> Stage : 관리
 Admin --> Monster : 관리
 Admin --> Item : 관리
 ```
 
-*최종 수정: 2026-05-18 | 담당: 김남준(분석가)*
+*최종 수정: 2026-06-02 | 담당: 김남준(분석가)*
