@@ -5,37 +5,42 @@ flowchart LR
 %% Packages
 %% =========================
 
-UserManagement["📦 User Management<br/>User<br/>Admin"]
+UserPackage["📦 User\nUser"]
 
-PlayerSystem["📦 Player System<br/>Player<br/>PlayerStats<br/>Skill<br/>Inventory"]
+AdminPackage["📦 Admin\nAdmin"]
 
-ItemSystem["📦 Item System<br/>Item<br/>Equipment<br/>Consumable"]
+PlayerSystem["📦 Player System\nPlayer\nPlayerStats\nSkill\nInventory"]
 
-StageSystem["📦 Stage System<br/>Stage<br/>Terrain<br/>Trap<br/>Checkpoint"]
+ItemSystem["📦 Item System\nItem\nEquipment\nConsumable"]
 
-MonsterSystem["📦 Monster System<br/>Monster<br/>Boss"]
+StageSystem["📦 Stage System\nStage\nTerrain\nTrap\nCheckpoint"]
 
-ShopSystem["📦 Shop System<br/>Shop"]
+MonsterSystem["📦 Monster System\nMonster\nBoss"]
 
-ScoreSystem["📦 Score System<br/>Score<br/>Ranking"]
+ShopSystem["📦 Shop System\nShop"]
 
-SessionSystem["📦 Session System<br/>GameSession<br/>SaveData<br/>Challenge"]
+ScoreSystem["📦 Score System\nScore\nRanking"]
+
+SessionSystem["📦 Session System\nGameSession\nSaveData"]
+
+ChallengeSystem["📦 Challenge System\nChallenge"]
 
 %% =========================
 %% Dependencies
 %% =========================
 
-UserManagement --> PlayerSystem
+UserPackage --> PlayerSystem
+
+AdminPackage --> ItemSystem
+AdminPackage --> MonsterSystem
+AdminPackage --> StageSystem
 
 PlayerSystem --> ItemSystem
-PlayerSystem --> StageSystem
 PlayerSystem --> ShopSystem
 
-MonsterSystem --> PlayerSystem
 MonsterSystem --> ItemSystem
 
 StageSystem --> MonsterSystem
-StageSystem --> PlayerSystem
 
 ShopSystem --> ItemSystem
 
@@ -46,7 +51,8 @@ SessionSystem --> PlayerSystem
 SessionSystem --> StageSystem
 SessionSystem --> ScoreSystem
 
-UserManagement --> ItemSystem
-UserManagement --> MonsterSystem
-UserManagement --> StageSystem
+ChallengeSystem --> SessionSystem
+ChallengeSystem --> StageSystem
 ```
+
+*최종 수정: 2026-06-02 | 담당: 김민재(설계자)*
