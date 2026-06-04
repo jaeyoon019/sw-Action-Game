@@ -25,6 +25,8 @@ SessionSystem["📦 Session System\nGameSession\nSaveData"]
 
 ChallengeSystem["📦 Challenge System\nChallenge"]
 
+UISystem["📦 UI System\nMainMenuUI\nGamePlayUI\nInventoryUI\nShopUI\nPauseUI\nStageSelectUI\nStageClearUI\nRankingUI\nChallengeUI"]
+
 %% =========================
 %% Dependencies
 %% =========================
@@ -53,6 +55,12 @@ SessionSystem --> ScoreSystem
 
 ChallengeSystem --> SessionSystem
 ChallengeSystem --> StageSystem
+
+UISystem --> PlayerSystem
+UISystem --> SessionSystem
+UISystem --> ScoreSystem
+UISystem --> ShopSystem
+UISystem --> ChallengeSystem
 ```
 
 *최종 수정: 2026-06-02 | 담당: 김민재(설계자)*
