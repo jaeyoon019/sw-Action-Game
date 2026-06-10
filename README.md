@@ -27,7 +27,27 @@
 - [M2 설계](https://github.com/jaeyoon019/sw-Action-Game/milestone/2)
 - [M3 구현·보고](https://github.com/jaeyoon019/sw-Action-Game/milestone/3)
 
+## 기술 스택
+
+- Python 3.11+
+- [pygame-ce](https://pyga.me/) — 게임 라이브러리
+- [pytmx](https://github.com/bitcraft/pytmx) + [Tiled](https://www.mapeditor.org/) — 타일맵 로더 / 에디터
+
+## 실행 방법
+
+```powershell
+pip install -r requirements.txt
+python src/main.py
+```
+
+자세한 구현 규칙은 [MVP 스펙 문서](docs/mvp-spec.md)를 참조.
+
 ## 문서
+
+**구현 기준 (MVP)**
+- [**MVP 스펙 문서**](docs/mvp-spec.md) — 구현 단계의 단일 기준. AI에 코드를 요청할 때 항상 첨부
+
+**기획 / 설계 (최종 비전 — MVP 스코프 아님)**
 - [요구사항 정의서](docs/requirements.md)
 - [WBS 및 일정](docs/wbs.md)
 - [비용산정](docs/FP_estimation.md)
@@ -35,5 +55,8 @@
 - [클래스 다이어그램](docs/classdiagram.md)
 - [패키지 다이어그램](docs/PackageDiagram.md)
 - [유저 인터페이스](docs/ui.md)
+
+**운영**
 - [AI 사용 로그](docs/ai-usage-record/)
 - [회의록 목록](docs/meetings/)
+- [에셋 출처](docs/CREDITS.md)
