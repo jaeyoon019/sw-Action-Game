@@ -543,7 +543,73 @@ Admin --> Item : 관리
 - `Checkpoint.activate()` / `respawnPlayer()` 시그니처 명시.
 - 그 외 클래스 구성은 M2 최종본을 유지.
 
-> **MVP 구현 클래스**: MVP는 `Game`, `Scene`(+`MenuScene`/`GameplayScene`), `Player`, `Stage`, `Trap`, `Checkpoint`, `Camera` 의 7개 클래스로 한정한다. 위 다이어그램 중 `User`/`Admin`/`Inventory`/`Item`/`Shop`/`Monster`/`Score`/`Ranking`/`SaveData`/`Challenge` 등은 최종 비전 문서에만 존재하며 본 학기 구현 코드에는 포함되지 않는다. 상세 구분은 [docs/mvp-spec.md](docs/mvp-spec.md) 참조.
+> **MVP 구현 클래스**: MVP는 `Game`, `Scene`, `MenuScene`, `GameplayScene`, `Player`, `Stage`, `Trap`, `Checkpoint`, `Camera` 의 9개 클래스로 한정한다. 위 다이어그램 중 `User`/`Admin`/`Inventory`/`Item`/`Shop`/`Monster`/`Score`/`Ranking`/`SaveData`/`Challenge` 등은 최종 비전 문서에만 존재하며 본 학기 구현 코드에는 포함되지 않는다. 상세 구분은 [docs/mvp-spec.md](docs/mvp-spec.md) 참조.
+
+### 7-3. 패키지 다이어그램
+
+```mermaid
+flowchart LR
+
+UserPackage["📦 User\nUser"]
+
+AdminPackage["📦 Admin\nAdmin"]
+
+PlayerSystem["📦 Player System\nPlayer\nPlayerStats\nSkill\nInventory"]
+
+ItemSystem["📦 Item System\nItem\nEquipment\nConsumable"]
+
+StageSystem["📦 Stage System\nStage\nTerrain\nTrap\nCheckpoint"]
+
+MonsterSystem["📦 Monster System\nMonster\nBoss"]
+
+ShopSystem["📦 Shop System\nShop"]
+
+ScoreSystem["📦 Score System\nScore\nRanking"]
+
+SessionSystem["📦 Session System\nGameSession\nSaveData"]
+
+ChallengeSystem["📦 Challenge System\nChallenge"]
+
+UISystem["📦 UI System\nMainMenuUI\nLoginUI\nRegisterUI\nGamePlayUI\nInventoryUI\nShopUI\nPauseUI\nStageSelectUI\nStageClearUI\nRankingUI\nChallengeUI"]
+
+UserPackage --> PlayerSystem
+
+AdminPackage --> ItemSystem
+AdminPackage --> MonsterSystem
+AdminPackage --> StageSystem
+
+PlayerSystem --> ItemSystem
+PlayerSystem --> ShopSystem
+
+MonsterSystem --> ItemSystem
+
+StageSystem --> MonsterSystem
+
+ShopSystem --> ItemSystem
+
+ScoreSystem --> PlayerSystem
+ScoreSystem --> StageSystem
+
+SessionSystem --> PlayerSystem
+SessionSystem --> StageSystem
+SessionSystem --> ScoreSystem
+
+ChallengeSystem --> SessionSystem
+ChallengeSystem --> StageSystem
+
+UISystem --> PlayerSystem
+UISystem --> SessionSystem
+UISystem --> ScoreSystem
+UISystem --> ShopSystem
+UISystem --> ChallengeSystem
+```
+
+**M2 대비 변경 사항**
+
+- 인스펙션 반영으로 `UISystem` 패키지에 `LoginUI`, `RegisterUI`를 추가하여 [UI 설계서](docs/ui.md) UI-02, UI-03과 일치시킴.
+- 그 외 패키지 구성은 M2 최종본을 유지.
+
+> **MVP 구현 패키지**: MVP는 Player System(`Player`), Stage System(`Stage`, `Trap`, `Checkpoint`), `Camera`, `Scene` 계열만 사용한다. 그 외 패키지는 최종 비전 문서에만 존재한다.
 
 ---
 

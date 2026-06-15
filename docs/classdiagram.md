@@ -1,3 +1,5 @@
+> **이 다이어그램은 최종 비전 기준입니다.** MVP 구현 범위(Game, Scene, Player, Stage, Trap, Checkpoint, Camera 7개 클래스)는 [docs/mvp-spec.md](mvp-spec.md) §7을 참조하세요.
+
 ```mermaid
 classDiagram
 

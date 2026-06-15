@@ -1,3 +1,5 @@
+> **이 다이어그램은 최종 비전 기준입니다.** MVP 구현 범위는 [docs/mvp-spec.md](mvp-spec.md)를 참조하세요.
+
 ```mermaid
 flowchart LR
 

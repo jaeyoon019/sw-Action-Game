@@ -1,3 +1,5 @@
+> **이 다이어그램은 최종 비전 기준입니다.** MVP 구현 패키지는 Player System(Player), Stage System(Stage, Trap, Checkpoint), 그리고 Camera/Scene만 해당합니다. 상세 MVP 범위는 [docs/mvp-spec.md](mvp-spec.md) §7을 참조하세요.
+
 ```mermaid
 flowchart LR
 
@@ -25,7 +27,7 @@ SessionSystem["📦 Session System\nGameSession\nSaveData"]
 
 ChallengeSystem["📦 Challenge System\nChallenge"]
 
-UISystem["📦 UI System\nMainMenuUI\nGamePlayUI\nInventoryUI\nShopUI\nPauseUI\nStageSelectUI\nStageClearUI\nRankingUI\nChallengeUI"]
+UISystem["📦 UI System\nMainMenuUI\nLoginUI\nRegisterUI\nGamePlayUI\nInventoryUI\nShopUI\nPauseUI\nStageSelectUI\nStageClearUI\nRankingUI\nChallengeUI"]
 
 %% =========================
 %% Dependencies

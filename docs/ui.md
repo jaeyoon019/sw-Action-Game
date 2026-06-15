@@ -1,4 +1,7 @@
 # 유저 인터페이스 설계서
+
+> **이 문서는 최종 비전 기준입니다.** MVP 구현 화면은 메뉴(MenuScene), 게임 플레이(GameplayScene), STAGE CLEAR 3가지로 한정됩니다. MVP 화면 범위는 [docs/mvp-spec.md](mvp-spec.md) §7.2를 참조하세요.
+
 ---
 
 ## 1. 화면 목록

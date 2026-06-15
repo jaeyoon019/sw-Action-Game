@@ -120,7 +120,7 @@ DEATH_Y = 2000   # 플레이어 y가 이 값 초과 시 낙사
 KEY_LEFT  = pygame.K_LEFT
 KEY_RIGHT = pygame.K_RIGHT
 KEY_JUMP  = pygame.K_SPACE
-KEY_PAUSE = pygame.K_ESCAPE
+KEY_PAUSE = pygame.K_ESCAPE   # 현재 MVP 미사용 (후속 단계 일시정지 기능 예약)
 ```
 
 > 모든 이동은 **반드시 dt 기반**:
@@ -142,7 +142,7 @@ KEY_PAUSE = pygame.K_ESCAPE
 
 ## 7. MVP 클래스 명세
 
-MVP에는 **아래 7개 클래스만** 존재한다. 클래스 다이어그램의 그 외 클래스(User, Item, Shop, Monster 등)는 만들지 않는다.
+MVP에는 **아래 9개 클래스만** 존재한다. (`Scene` 베이스·`MenuScene`·`GameplayScene`을 각각 1개로 계산, §7.2 참조) 클래스 다이어그램의 그 외 클래스(User, Item, Shop, Monster 등)는 만들지 않는다.
 
 ### 7.1 `Game` (`src/main.py`)
 ```python
