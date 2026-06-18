@@ -72,6 +72,19 @@ class Player:
             if not self.rect.colliderect(solid):
                 continue
 
+            # 세로 겹침이 가로 겹침보다 작으면 위/아래 충돌이므로
+            # 수평 해결을 건너뛴다 (_move_y가 처리)
+            h_overlap = (
+                min(self.rect.right, solid.right)
+                - max(self.rect.left, solid.left)
+            )
+            v_overlap = (
+                min(self.rect.bottom, solid.bottom)
+                - max(self.rect.top, solid.top)
+            )
+            if v_overlap < h_overlap:
+                continue
+
             if self.velocity.x > 0:
                 self.rect.right = solid.left
             elif self.velocity.x < 0:
