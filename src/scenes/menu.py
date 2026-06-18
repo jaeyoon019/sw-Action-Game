@@ -1,5 +1,6 @@
 import pygame
 
+from scenes.gameplay import GameplayScene
 from scenes.scene import Scene
 from settings import KEY_JUMP, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
 
@@ -12,8 +13,7 @@ class MenuScene(Scene):
 
     def handle_event(self, event: pygame.event.Event) -> None:
         if event.type == pygame.KEYDOWN and event.key == KEY_JUMP:
-            # TODO: GameplayScene 구현 후 game.change_scene(GameplayScene(self.game)) 로 교체
-            pass
+            self.game.change_scene(GameplayScene(self.game))
 
     def draw(self, surface: pygame.Surface) -> None:
         title = self.title_font.render(TITLE, True, (255, 255, 255))
