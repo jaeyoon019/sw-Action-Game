@@ -9,7 +9,10 @@ class Checkpoint:
     def activate(self, player) -> None:
         if not self.activated:
             self.activated = True
-            player.last_checkpoint = pygame.Vector2(self.rect.centerx, self.rect.bottom)
+            player.last_checkpoint = pygame.Vector2(
+                self.rect.left,
+                self.rect.bottom - player.rect.height,
+            )
 
     def draw(self, surface: pygame.Surface, camera_offset: pygame.Vector2) -> None:
         color = (255, 220, 0) if self.activated else (160, 160, 160)
