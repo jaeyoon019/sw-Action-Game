@@ -7,11 +7,14 @@ from typing import Any
 
 import pygame
 
+from entities.checkpoint import Checkpoint
+from entities.trap import Trap
+
 
 class Stage:
     solids: list[pygame.Rect]
-    traps: list[pygame.Rect]
-    checkpoints: list[pygame.Rect]
+    traps: list[Trap]
+    checkpoints: list[Checkpoint]
     spawn_point: pygame.Vector2
     goal_rect: pygame.Rect
     width: int
@@ -43,10 +46,10 @@ class Stage:
 
         for rect in self.solids:
             self._draw_rect(surface, rect, camera_offset, (90, 90, 90))
-        for rect in self.traps:
-            self._draw_rect(surface, rect, camera_offset, (210, 70, 70))
-        for rect in self.checkpoints:
-            self._draw_rect(surface, rect, camera_offset, (80, 160, 240))
+        for trap in self.traps:
+            trap.draw(surface, camera_offset)
+        for checkpoint in self.checkpoints:
+            checkpoint.draw(surface, camera_offset)
         if self.goal_rect.size != (0, 0):
             self._draw_rect(surface, self.goal_rect, camera_offset, (240, 210, 80))
 
@@ -149,9 +152,11 @@ class Stage:
         elif layer_name == "Goal":
             self.goal_rect = rect
         elif layer_name == "Trap":
-            self.traps.append(rect)
+            self.traps.append(Trap(rect.x, rect.y, rect.width, rect.height))
         elif layer_name == "Checkpoint":
-            self.checkpoints.append(rect)
+            self.checkpoints.append(
+                Checkpoint(rect.x, rect.y, rect.width, rect.height)
+            )
         elif layer_name == "Solid":
             self.solids.append(rect)
 
