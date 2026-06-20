@@ -44,6 +44,9 @@ python src/main.py
 
 ## 문서
 
+**최종 보고서**
+- [**M3 최종보고서**](M3_최종보고서_횡스크롤연구소.md)
+
 **구현 기준 (MVP)**
 - [**MVP 스펙 문서**](docs/mvp-spec.md) — 구현 단계의 단일 기준. AI에 코드를 요청할 때 항상 첨부
 
@@ -57,6 +60,7 @@ python src/main.py
 - [유저 인터페이스](docs/ui.md)
 
 **운영**
-- [AI 사용 로그](docs/ai-usage-record/)
+- AI 사용 로그 — [이재윤](docs/ai-usage-record/M3_AI로그_이재윤.md) · [김남준](docs/ai-usage-record/M3_AI로그_김남준.md) · [김담영](docs/ai-usage-record/M3_AI로그_김담영.md)
+- [인스펙션 체크리스트](docs/inspection-checklist.md)
 - [회의록 목록](docs/meetings/)
 - [에셋 출처](docs/CREDITS.md)
